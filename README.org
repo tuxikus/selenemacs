@@ -1,0 +1,2 @@
+* SelenEmacs 🌜
+SelenEmacs is an easy-to-use Emacs distribution.
