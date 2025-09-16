@@ -1,10 +1,10 @@
 run-local:
 	@echo "Starting SelenEmacs..."
-	emacs --init-directory .
+	SELENEMACS_RUN_LOCAL=1 emacs --init-directory .
 
 run-local-term:
 	@echo "Starting SelenEmacs..."
-	emacs --init-directory . -nw
+	SELENEMACS_RUN_LOCAL=1 emacs --init-directory . -nw
 
 benchmark:
 	@echo "Benchmarking startup..."

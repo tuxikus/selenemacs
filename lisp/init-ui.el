@@ -1,13 +1,10 @@
-;;; init.el --- Initialization file of SelenEmacs. -*- lexical-binding: t no-byte-compile: t -*-
+;;; init-ui.el --- User Interface configuration. -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2025 tuxikus
 
 ;; Author: tuxikus <contact@tuxikus.de>
 ;; Maintainer: tuxikus <contact@tuxikus.de>
 ;; URL: https://github.com/tuxikus/selenemacs
-;; Created: 15.09.2025
-;; Version: 0.0.1
-;; Keywords: -
 
 ;; This file is not part of GNU Emacs.
 ;;
@@ -25,16 +22,13 @@
 ;; along with this program.  If not, see https://www.gnu.org/licenses/.
 
 ;;; Commentary:
-;; SelenEmacs initialization file
+;; SelenEmacs user Interface configuration.
 
 ;;; Code:
+(menu-bar-mode -1)
+(scroll-bar-mode -1)
+(tool-bar-mode -1)
 
-;; load path
-(if (string= (getenv "SELENEMACS_RUN_LOCAL") "1")
-    (setq user-emacs-directory "."))
+(provide 'init-ui)
+;;; init-ui.el ends here
 
-(add-to-list 'load-path (concat user-emacs-directory "/lisp"))
-
-(require 'init-ui)
-
-;;; init.el ends here
