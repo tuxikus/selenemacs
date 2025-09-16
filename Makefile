@@ -8,4 +8,4 @@ run-local-term:
 
 benchmark:
 	@echo "Benchmarking startup..."
-	time emacs --init-directory . --eval "(kill-emacs)"
+	SELENEMACS_BENCHMARK=1 time emacs --init-directory .

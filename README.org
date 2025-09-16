@@ -1,2 +1,38 @@
-* SelenEmacs 🌜
+* SelenEmacs 🌜 (current state not usable, wait for v1.0.0)
 SelenEmacs is an easy-to-use Emacs distribution.
+
+* Installation
+** Requirements
+- Git
+
+** Backup your Emacs configuration
+If you already have a Emacs configuration, it is recommended to backup your =.emacs.d= directory:
+#+begin_src shell
+  mv $HOME/.emacs.d $HOME/.emacs.d.old
+#+end_src
+
+** Install SelenEmacs
+Now you can install SelenEmacs via =git clone=:
+#+begin_src shell
+  git clone https://github.com/tuxikus/selenemacs.git $HOME/.emacs.d
+#+end_src
+
+* Test without installation or touching your Emacs configuration
+** Requirements
+- make (if running on host)
+- docker or podman (if running in container)
+
+** Local
+Clone the repository in your preferred directory:
+#+begin_src shell
+  cd projects
+  git clone https://github.com/tuxikus/selenemacs.git
+#+end_src
+
+Now enter the SelenEmacs directory and run =make run-local= for GUI or =make run-local-term= for the terminal version:
+#+begin_src shell
+  cd selenemacs
+  make run-local
+  # OR
+  make run-local-term
+#+end_src

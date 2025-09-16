@@ -6,7 +6,7 @@
 ;; Maintainer: tuxikus <contact@tuxikus.de>
 ;; URL: https://github.com/tuxikus/selenemacs
 ;; Created: 15.09.2025
-;; Version: 0.0.1
+;; Version: 0.0.2
 ;; Keywords: -
 
 ;; This file is not part of GNU Emacs.
@@ -30,11 +30,16 @@
 ;;; Code:
 
 ;; load path
-(if (string= (getenv "SELENEMACS_RUN_LOCAL") "1")
+(if (getenv "SELENEMACS_RUN_LOCAL")
     (setq user-emacs-directory "."))
 
 (add-to-list 'load-path (concat user-emacs-directory "/lisp"))
 
+;; init files
 (require 'init-ui)
+
+;; benchmark after init
+(if (getenv "SELENEMACS_BENCHMARK")
+    (kill-emacs))
 
 ;;; init.el ends here
