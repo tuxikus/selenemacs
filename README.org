@@ -36,3 +36,23 @@ Now enter the SelenEmacs directory and run =make run-local= for GUI or =make run
   # OR
   make run-local-term
 #+end_src
+
+** Container
+Build the container:
+#+begin_src shell
+  docker build -t selenemacs-container .
+  # OR
+  podman build -t selenemacs-container .
+#+end_src
+
+Run the container:
+#+begin_src shell
+  docker run -it --rm selenemacs-container:latest
+  # OR
+  podman run -it --rm selenemacs-container:latest
+#+end_src
+
+* See also
+- [[https://github.com/doomemacs/doomemacs][Doom Emacs]]
+- [[https://github.com/seagle0128/.emacs.d][Centaur Emacs]]
+- [[https://github.com/syl20bnr/spacemacs][Spacemacs]]
