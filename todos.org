@@ -2,6 +2,7 @@
 Github does not render the TODO header tags of org-mode.
 
 * Init files
+** DONE figure out how to make customization easy
 ** DONE add init-package.el or init-repository.el for package management
 
 * Misc

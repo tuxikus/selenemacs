@@ -1,13 +1,10 @@
-;;; init.el --- Initialization file of SelenEmacs. -*- lexical-binding: t no-byte-compile: t -*-
+;;; init-theme.el --- Theme of SelenEmacs. -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2025 tuxikus
 
 ;; Author: tuxikus <contact@tuxikus.de>
 ;; Maintainer: tuxikus <contact@tuxikus.de>
 ;; URL: https://github.com/tuxikus/selenemacs
-;; Created: 15.09.2025
-;; Version: 0.0.2
-;; Keywords: -
 
 ;; This file is not part of GNU Emacs.
 ;;
@@ -25,37 +22,16 @@
 ;; along with this program.  If not, see https://www.gnu.org/licenses/.
 
 ;;; Commentary:
-;; SelenEmacs initialization file
+;; Theme configuration.
 
 ;;; Code:
+(defun se/load-theme ()
+  "Load the user's selected theme."
+  (interactive)
+  (load-theme se/theme))
 
-;;----------
-;; load path
-(if (getenv "SELENEMACS_RUN_LOCAL")
-    (setq user-emacs-directory "."))
+(add-hook 'emacs-startup-hook #'se/load-theme)
 
-(add-to-list 'load-path (concat user-emacs-directory "/lisp"))
-;;----------
+(provide 'init-theme)
+;;; init-theme.el ends here
 
-;;-------------------
-;; user configuration
-(require 'init-user-config)
-(let ((se-config (expand-file-name "se-config.el" user-emacs-directory)))
-  (when (file-exists-p se-config)
-    (load se-config)))
-;;-------------------
-
-;;-----------
-;; init files
-(require 'init-package)
-(require 'init-theme)
-(require 'init-ui)
-;;-----------
-
-;;---------------------
-;; benchmark after init
-(if (getenv "SELENEMACS_BENCHMARK")
-    (kill-emacs))
-;;---------------------
-
-;;; init.el ends here
