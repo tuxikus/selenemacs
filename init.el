@@ -6,7 +6,7 @@
 ;; Maintainer: tuxikus <contact@tuxikus.de>
 ;; URL: https://github.com/tuxikus/selenemacs
 ;; Created: 15.09.2025
-;; Version: 0.0.2
+;; Version: 0.0.4
 ;; Keywords: -
 
 ;; This file is not part of GNU Emacs.
