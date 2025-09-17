@@ -36,6 +36,7 @@
 (add-to-list 'load-path (concat user-emacs-directory "/lisp"))
 
 ;; init files
+(require 'init-package)
 (require 'init-ui)
 
 ;; benchmark after init

@@ -2,7 +2,7 @@
 Github does not render the TODO header tags of org-mode.
 
 * Init files
-** TODO add init-package.el or init-repository.el for package management
+** DONE add init-package.el or init-repository.el for package management
 
 * Misc
 ** TODO add make commands for container

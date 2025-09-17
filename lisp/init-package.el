@@ -1,4 +1,4 @@
-;;; init-ui.el --- User Interface configuration. -*- lexical-binding: t -*-
+;;; init-package.el --- Remote package sources. -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2025 tuxikus
 
@@ -22,15 +22,12 @@
 ;; along with this program.  If not, see https://www.gnu.org/licenses/.
 
 ;;; Commentary:
-;; SelenEmacs user Interface configuration.
+;; Setup of remote package sources like MELPA.
 
 ;;; Code:
-(when (display-graphic-p)
-  (scroll-bar-mode -1)
-  (tool-bar-mode -1))
+(require 'package)
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 
-(menu-bar-mode -1)
-
-(provide 'init-ui)
-;;; init-ui.el ends here
+(provide 'init-package)
+;;; init-package.el ends here
 
