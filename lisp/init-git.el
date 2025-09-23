@@ -1,4 +1,4 @@
-;;; init-user-config.el --- User configuration setup. -*- lexical-binding: t -*-
+;;; init-git.el --- Git specific configuration. -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2025 tuxikus
 
@@ -22,22 +22,12 @@
 ;; along with this program.  If not, see https://www.gnu.org/licenses/.
 
 ;;; Commentary:
-;; Things the user can configure.
+;; Git specific configuration.
 
 ;;; Code:
+(use-package magit
+  :ensure t)
 
-;; Custom group for SelenEmacs
-(defgroup selenemacs nil
-  "Group of the SelenEmacs distribution."
-  :group 'convenience)
-
-(defcustom se/theme 'modus-vivendi
-  "Theme of SeleneEmacs"
-  :type '(choice
-	  (const modus-operandi)
-	  (const modus-vivendi))
-  :group 'selenemacs)
-
-(provide 'init-user-config)
-;;; init-user-config.el ends here
+(provide 'init-git)
+;;; init-git.el ends here
 

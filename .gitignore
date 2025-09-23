@@ -1,2 +1,6 @@
 projects
+se-config.el.local
+*~
 elpa/
+transient/
+eln-cache/
