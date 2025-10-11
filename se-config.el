@@ -14,28 +14,28 @@
 ;; Magit
 ;;
 (setq se/use-magit t)
-;;(setq se/use-magit nil)
 
 ;;
 ;; Vertico
 ;;
 (setq se/use-vertico t)
-;;(setq se/use-vertico nil)
+
+;;
+;; Orderless
+;;
+(setq se/use-orderless t)
 
 ;;
 ;; Dashboard
 ;;
 (setq se/use-dashboard t)
-;;(setq se/use-dashboard nil)
 
 ;;
 ;; Doom Modeline
 ;;
 (setq se/use-doom-modeline t)
-;;(setq se/use-doom-modeline nil)
 
 ;;
 ;; Meow
 ;;
 ;;(setq se/use-meow t)
-(setq se/use-meow nil)
