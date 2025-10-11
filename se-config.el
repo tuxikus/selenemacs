@@ -3,7 +3,7 @@
 ;; Main configuration file for SelenEmacs.
 
 ;;; Font
-(setq se/font "IosevkaTerm-20")
+;;(setq se/font "IosevkaTerm-20")
 
 ;;; Theme
 (setq se/theme 'modus-vivendi)
@@ -24,6 +24,11 @@
 ;; Orderless
 ;;
 (setq se/use-orderless t)
+
+;;
+;; Consult
+;;
+(setq se/use-consult t)
 
 ;;
 ;; Dashboard

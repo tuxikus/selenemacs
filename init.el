@@ -48,18 +48,19 @@
 (require 'init-elpaca)
 (require 'init-se-config)
 
+(require 'init-consult)
 (require 'init-custom)
 (require 'init-dashboard)
+(require 'init-doom-modeline)
 (require 'init-files)
 (require 'init-gcmh)
-(require 'init-orderless)
 (require 'init-magit)
 (require 'init-meow)
+(require 'init-orderless)
 (require 'init-package)
 (require 'init-theme)
 (require 'init-ui)
 (require 'init-vertico)
-(require 'init-doom-modeline)
 
 
 ;;; init.el ends here
