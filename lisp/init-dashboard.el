@@ -31,11 +31,13 @@
 
 (when se/use-dashboard
   (use-package dashboard
-  :ensure t
-  :config
-  (add-hook 'elpaca-after-init-hook #'dashboard-insert-startupify-lists)
-  (add-hook 'elpaca-after-init-hook #'dashboard-initialize)
-  (dashboard-setup-startup-hook)))
+    :ensure t
+    :custom
+    (dashboard-center-content t)
+    :config
+    (add-hook 'elpaca-after-init-hook #'dashboard-insert-startupify-lists)
+    (add-hook 'elpaca-after-init-hook #'dashboard-initialize)
+    (dashboard-setup-startup-hook)))
 
 (provide 'init-dashboard)
 ;;; init-dashboard.el ends here
