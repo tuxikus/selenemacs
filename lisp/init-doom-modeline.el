@@ -25,7 +25,7 @@
 ;;
 
 ;;; Code:
-(defcustom se/use-doom-modeline t
+(defcustom se/use-doom-modeline nil
   "Option to use the doom modeline package."
   :type 'boolean
   :group 'selenemacs)
