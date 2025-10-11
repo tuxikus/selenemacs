@@ -1,4 +1,4 @@
-;;; init-ui.el --- User Interface configuration. -*- lexical-binding: t -*-
+;;; init-dashboard.el --- Dashboard configuration. -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2025 tuxikus
 
@@ -22,28 +22,21 @@
 ;; along with this program.  If not, see https://www.gnu.org/licenses/.
 
 ;;; Commentary:
-;; SelenEmacs user Interface configuration.
 
 ;;; Code:
-(defcustom se/font ""
-  "Font for the GUI"
-  :type 'string
+(defcustom se/use-dashboard nil
+  "Option to use the dashboard package."
+  :type 'boolean
   :group 'selenemacs)
 
-(defun se/set-font ()
-  "Set the font to `se/font` if it is not empty."
-  (when (and (display-graphic-p)
-             (not (string-empty-p se/font)))
-    (set-frame-font se/font nil t)))
+(when se/use-dashboard
+  (use-package dashboard
+  :ensure t
+  :config
+  (add-hook 'elpaca-after-init-hook #'dashboard-insert-startupify-lists)
+  (add-hook 'elpaca-after-init-hook #'dashboard-initialize)
+  (dashboard-setup-startup-hook)))
 
-(when (display-graphic-p)
-  (scroll-bar-mode -1)
-  (tool-bar-mode -1))
-
-(menu-bar-mode -1)
-
-(se/set-font)
-
-(provide 'init-ui)
-;;; init-ui.el ends here
+(provide 'init-dashboard)
+;;; init-dashboard.el ends here
 

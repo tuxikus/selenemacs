@@ -1,4 +1,4 @@
-;;; init-git.el --- Git specific configuration. -*- lexical-binding: t -*-
+;;; init-vertico.el --- Vertico - vertical interactive completion - configuration. -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2025 tuxikus
 
@@ -22,12 +22,19 @@
 ;; along with this program.  If not, see https://www.gnu.org/licenses/.
 
 ;;; Commentary:
-;; Git specific configuration.
+;; https://github.com/minad/vertico
 
 ;;; Code:
-(use-package magit
-  :ensure t)
+(defcustom se/use-vertico nil
+  "Option to use the vertico package."
+  :type 'boolean
+  :group 'selenemacs)
 
-(provide 'init-git)
-;;; init-git.el ends here
+(when se/use-vertico
+  (use-package vertico
+    :ensure t
+    :init
+    (vertico-mode 1)))
 
+(provide 'init-vertico)
+;;; init-vertico.el ends here

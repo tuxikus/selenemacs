@@ -1,4 +1,4 @@
-;;; init-ui.el --- User Interface configuration. -*- lexical-binding: t -*-
+;;; init-custom.el --- Manage the custom file. -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2025 tuxikus
 
@@ -22,28 +22,14 @@
 ;; along with this program.  If not, see https://www.gnu.org/licenses/.
 
 ;;; Commentary:
-;; SelenEmacs user Interface configuration.
+;; Setup a custom file.
 
 ;;; Code:
-(defcustom se/font ""
-  "Font for the GUI"
-  :type 'string
-  :group 'selenemacs)
+(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 
-(defun se/set-font ()
-  "Set the font to `se/font` if it is not empty."
-  (when (and (display-graphic-p)
-             (not (string-empty-p se/font)))
-    (set-frame-font se/font nil t)))
+(when (file-exists-p custom-file)
+  (load custom-file))
 
-(when (display-graphic-p)
-  (scroll-bar-mode -1)
-  (tool-bar-mode -1))
-
-(menu-bar-mode -1)
-
-(se/set-font)
-
-(provide 'init-ui)
-;;; init-ui.el ends here
+(provide 'init-custom)
+;;; init-custom.el ends here
 

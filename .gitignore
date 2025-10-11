@@ -4,3 +4,8 @@ se-config.el.local
 elpa/
 transient/
 eln-cache/
+eshell/
+elpaca/
+custom.el
+recentf
+themes/

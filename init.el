@@ -30,24 +30,32 @@
 ;;; Code:
 
 ;; load path
+(if (getenv "SELENEMACS_RUN_LOCAL")
+    (setq user-emacs-directory "."))
+
 (add-to-list 'load-path (concat user-emacs-directory "/lisp"))
 
+;; https://github.com/jwiegley/use-package/issues/768#issuecomment-1229781184
+(if init-file-debug
+    (setq use-package-verbose t
+          use-package-expand-minimally nil
+          use-package-compute-statistics t
+          debug-on-error t)
+  (setq use-package-verbose nil
+        use-package-expand-minimally t))
+
 ;; init files
-(require 'init-git)
-(require 'init-package)
+(require 'init-elpaca)
 (require 'init-se-config)
+
+(require 'init-custom)
+(require 'init-dashboard)
+(require 'init-files)
+(require 'init-gcmh)
+(require 'init-magit)
+(require 'init-package)
 (require 'init-theme)
 (require 'init-ui)
+(require 'init-vertico)
+
 ;;; init.el ends here
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(package-selected-packages nil))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
