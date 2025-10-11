@@ -27,3 +27,9 @@
 ;;
 (setq se/use-dashboard t)
 ;;(setq se/use-dashboard nil)
+
+;;
+;; Meow
+;;
+;;(setq se/use-meow t)
+(setq se/use-meow nil)

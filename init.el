@@ -53,6 +53,7 @@
 (require 'init-files)
 (require 'init-gcmh)
 (require 'init-magit)
+(require 'init-meow)
 (require 'init-package)
 (require 'init-theme)
 (require 'init-ui)
