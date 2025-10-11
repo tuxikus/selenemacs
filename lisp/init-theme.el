@@ -30,7 +30,7 @@
   (interactive)
   (load-theme se/theme))
 
-(add-to-list 'custom-theme-load-path (concat user-emacs-directory "themes")
+(add-to-list 'custom-theme-load-path (concat user-emacs-directory "themes"))
 
 (add-hook 'emacs-startup-hook #'se/load-theme)
 
