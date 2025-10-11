@@ -29,6 +29,12 @@
 ;;(setq se/use-dashboard nil)
 
 ;;
+;; Doom Modeline
+;;
+(setq se/use-doom-modeline t)
+;;(setq se/use-doom-modeline nil)
+
+;;
 ;; Meow
 ;;
 ;;(setq se/use-meow t)

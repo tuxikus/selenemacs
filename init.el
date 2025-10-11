@@ -58,5 +58,7 @@
 (require 'init-theme)
 (require 'init-ui)
 (require 'init-vertico)
+(require 'init-doom-modeline)
+
 
 ;;; init.el ends here

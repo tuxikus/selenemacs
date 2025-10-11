@@ -74,7 +74,7 @@
 	 '("2" . meow-expand-2)
 	 '("1" . meow-expand-1)
 	 '("-" . negative-argument)
-	 '(";" . meow-reverse)
+	 '("'" . meow-reverse)
 	 '("," . meow-inner-of-thing)
 	 '("." . meow-bounds-of-thing)
 	 '("[" . meow-beginning-of-thing)
@@ -122,7 +122,7 @@
 	 '("y" . meow-save)
 	 '("Y" . meow-sync-grab)
 	 '("z" . meow-pop-selection)
-	 '("'" . repeat)
+	 '(";" . repeat)
 	 '("<escape>" . ignore))))
   :hook
   (emacs-startup . se/setup-meow)))
