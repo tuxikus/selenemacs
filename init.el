@@ -52,6 +52,7 @@
 (require 'init-dashboard)
 (require 'init-files)
 (require 'init-gcmh)
+(require 'init-orderless)
 (require 'init-magit)
 (require 'init-meow)
 (require 'init-package)
