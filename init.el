@@ -62,5 +62,5 @@
 (require 'init-ui)
 (require 'init-vertico)
 
-
+(server-start)
 ;;; init.el ends here
