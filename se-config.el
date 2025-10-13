@@ -54,3 +54,18 @@
 ;; Cape
 ;;
 (setq se/use-cape t)
+
+;;
+;; go-mode
+;;
+(setq se/use-go-mode t)
+
+;;
+;; org-journal
+;;
+(setq se/use-org-journal t)
+
+;;
+;; marginalia
+;;
+(setq se/use-marginalia t)

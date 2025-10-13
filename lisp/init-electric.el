@@ -1,4 +1,4 @@
-;;; init-emacs.el --- Emacs configuration. -*- lexical-binding: t -*-
+;;; init-electric.el --- Electric configuration. -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2025 tuxikus
 
@@ -25,17 +25,10 @@
 ;;
 
 ;;; Code:
-(use-package emacs
+(use-package electric
   :ensure nil
-  :bind
-  (("C-c b k" . kill-buffer)
-   ("C-c p p" . project-switch-project)
-   ("C-c p e" . project-eshell)
-   ("C-c p f" . project-find-file))
   :custom
-  (tab-always-indent 'complete)
-  (text-mode-ispell-word-completion nil)
-  (read-extended-command-predicate #'command-completion-default-include-p))
+  (electric-pair-mode t))
 
-(provide 'init-emacs)
-;;; init-emacs.el ends here
+(provide 'init-electric)
+;;; init-electric.el ends here

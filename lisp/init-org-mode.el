@@ -1,4 +1,4 @@
-;;; init-emacs.el --- Emacs configuration. -*- lexical-binding: t -*-
+;;; init-org-mode.el --- org mode configuration. -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2025 tuxikus
 
@@ -25,17 +25,14 @@
 ;;
 
 ;;; Code:
-(use-package emacs
+(use-package org
   :ensure nil
-  :bind
-  (("C-c b k" . kill-buffer)
-   ("C-c p p" . project-switch-project)
-   ("C-c p e" . project-eshell)
-   ("C-c p f" . project-find-file))
   :custom
-  (tab-always-indent 'complete)
-  (text-mode-ispell-word-completion nil)
-  (read-extended-command-predicate #'command-completion-default-include-p))
+  (org-attach-id-dir ".attach")
+  ;; TODO: uuidgenlc
+  ;; (org-id-uuid-program "~/.local/bin/uuidgenlc")
+  (org-todo-keywords
+   '((sequence "TODO(t)" "NEXT(n)" "|" "DONE(d)"))))
 
-(provide 'init-emacs)
-;;; init-emacs.el ends here
+(provide 'init-org-mode)
+;;; init-org-mode.el ends here

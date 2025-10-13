@@ -1,4 +1,4 @@
-;;; init-emacs.el --- Emacs configuration. -*- lexical-binding: t -*-
+;;; init-org-journal.el --- org journal configuration. -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2025 tuxikus
 
@@ -25,17 +25,20 @@
 ;;
 
 ;;; Code:
-(use-package emacs
-  :ensure nil
-  :bind
-  (("C-c b k" . kill-buffer)
-   ("C-c p p" . project-switch-project)
-   ("C-c p e" . project-eshell)
-   ("C-c p f" . project-find-file))
-  :custom
-  (tab-always-indent 'complete)
-  (text-mode-ispell-word-completion nil)
-  (read-extended-command-predicate #'command-completion-default-include-p))
+(defcustom se/use-org-journal nil
+  "Option to use the org journal package."
+  :type 'boolean
+  :group 'selenemacs)
 
-(provide 'init-emacs)
-;;; init-emacs.el ends here
+(when se/use-org-journal
+  (use-package org-journal
+    :ensure t
+    :custom
+    (org-journal-dir (concat org-directory "/journal/"))
+    (org-journal-file-type 'daily)
+    (org-journal-file-format "%Y/%m/%F.org")
+    (org-journal-date-format "%A, %d %B %Y")
+    (org-journal-corryover-items "TODO=\"TODO\"|TODO=\"NEXT\"")))
+		     
+(provide 'init-org-journal)
+;;; init-org-journal.el ends here

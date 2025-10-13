@@ -1,4 +1,4 @@
-;;; init-emacs.el --- Emacs configuration. -*- lexical-binding: t -*-
+;;; init-eshell.el --- Eshell configuration. -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2025 tuxikus
 
@@ -25,17 +25,10 @@
 ;;
 
 ;;; Code:
-(use-package emacs
+(use-package eshell
   :ensure nil
-  :bind
-  (("C-c b k" . kill-buffer)
-   ("C-c p p" . project-switch-project)
-   ("C-c p e" . project-eshell)
-   ("C-c p f" . project-find-file))
-  :custom
-  (tab-always-indent 'complete)
-  (text-mode-ispell-word-completion nil)
-  (read-extended-command-predicate #'command-completion-default-include-p))
+  :hook
+  (eshell-first-time-mode . (lambda () (eshell/alias "ll" "ls -lah"))))
 
-(provide 'init-emacs)
-;;; init-emacs.el ends here
+(provide 'init-eshell)
+;;; init-eshell.el ends here

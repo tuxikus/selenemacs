@@ -1,4 +1,4 @@
-;;; init-emacs.el --- Emacs configuration. -*- lexical-binding: t -*-
+;;; init-eglot.el --- Eglot configuration. -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2025 tuxikus
 
@@ -25,17 +25,10 @@
 ;;
 
 ;;; Code:
-(use-package emacs
+(use-package eglot
   :ensure nil
-  :bind
-  (("C-c b k" . kill-buffer)
-   ("C-c p p" . project-switch-project)
-   ("C-c p e" . project-eshell)
-   ("C-c p f" . project-find-file))
-  :custom
-  (tab-always-indent 'complete)
-  (text-mode-ispell-word-completion nil)
-  (read-extended-command-predicate #'command-completion-default-include-p))
+  :hook
+  ((go-mode . eglot-ensure)))
 
-(provide 'init-emacs)
-;;; init-emacs.el ends here
+(provide 'init-eglot)
+;;; init-eglot.el ends here

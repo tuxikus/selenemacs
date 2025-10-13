@@ -1,4 +1,4 @@
-;;; init-emacs.el --- Emacs configuration. -*- lexical-binding: t -*-
+;;; init-marginalia.el --- marginalia configuration. -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2025 tuxikus
 
@@ -25,17 +25,17 @@
 ;;
 
 ;;; Code:
-(use-package emacs
-  :ensure nil
-  :bind
-  (("C-c b k" . kill-buffer)
-   ("C-c p p" . project-switch-project)
-   ("C-c p e" . project-eshell)
-   ("C-c p f" . project-find-file))
-  :custom
-  (tab-always-indent 'complete)
-  (text-mode-ispell-word-completion nil)
-  (read-extended-command-predicate #'command-completion-default-include-p))
+(defcustom se/use-marginalia nil
+  "Option to use the marginalia package."
+  :type 'boolean
+  :group 'selenemacs)
 
-(provide 'init-emacs)
-;;; init-emacs.el ends here
+(when se/use-marginalia
+  (use-package marginalia
+    :ensure t
+    :defer t
+    :init
+    (marginalia-mode)))
+
+(provide 'init-marginalia)
+;;; init-marginalia.el ends here

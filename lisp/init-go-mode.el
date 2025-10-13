@@ -1,4 +1,4 @@
-;;; init-emacs.el --- Emacs configuration. -*- lexical-binding: t -*-
+;;; init-go-mode.el --- go-mode configuration. -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2025 tuxikus
 
@@ -25,17 +25,17 @@
 ;;
 
 ;;; Code:
-(use-package emacs
-  :ensure nil
-  :bind
-  (("C-c b k" . kill-buffer)
-   ("C-c p p" . project-switch-project)
-   ("C-c p e" . project-eshell)
-   ("C-c p f" . project-find-file))
-  :custom
-  (tab-always-indent 'complete)
-  (text-mode-ispell-word-completion nil)
-  (read-extended-command-predicate #'command-completion-default-include-p))
+(defcustom se/use-go-mode nil
+  "Option to use the go-mode package."
+  :type 'boolean
+  :group 'selenemacs)
 
-(provide 'init-emacs)
-;;; init-emacs.el ends here
+(when se/use-go-mode
+  (use-package go-mode
+    :ensure t
+    :hook ((go-mode . (lambda () (setq tab-width 4
+				       indent-tabs-mode 1)))
+	   (before-save . gofmt-before-save))))
+
+(provide 'init-go-mode)
+;;; init-go-mode.el ends here
