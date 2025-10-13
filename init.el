@@ -48,10 +48,13 @@
 (require 'init-elpaca)
 (require 'init-se-config)
 
+(require 'init-cape)
 (require 'init-consult)
+(require 'init-corfu)
 (require 'init-custom)
 (require 'init-dashboard)
 (require 'init-doom-modeline)
+(require 'init-emacs)
 (require 'init-files)
 (require 'init-gcmh)
 (require 'init-magit)

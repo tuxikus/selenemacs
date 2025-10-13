@@ -44,3 +44,13 @@
 ;; Meow
 ;;
 ;;(setq se/use-meow t)
+
+;;
+;; Corfu
+;;
+(setq se/use-corfu t)
+
+;;
+;; Cape
+;;
+(setq se/use-cape t)
