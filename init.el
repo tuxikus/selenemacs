@@ -49,6 +49,7 @@
 (require 'init-se-config)
 
 (require 'init-cape)
+(require 'init-treemacs)
 (require 'init-consult)
 (require 'init-electric)
 (require 'init-savehist)

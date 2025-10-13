@@ -10,3 +10,4 @@ custom.el
 recentf
 themes/
 history
+.cache/

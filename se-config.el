@@ -69,3 +69,8 @@
 ;; marginalia
 ;;
 (setq se/use-marginalia t)
+
+;;
+;; treemacs
+;;
+(setq se/use-treemacs t)
