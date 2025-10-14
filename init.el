@@ -74,6 +74,7 @@
 (require 'init-theme)
 (require 'init-ui)
 (require 'init-vertico)
+(require 'init-kdl-mode)
 
 (server-start)
 ;;; init.el ends here

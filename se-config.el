@@ -3,7 +3,7 @@
 ;; Main configuration file for SelenEmacs.
 
 ;;; Font
-;;(setq se/font "IosevkaTerm-20")
+(setq se/font "Iosevka-25")
 
 ;;; Theme
 (setq se/theme 'modus-vivendi)
@@ -43,7 +43,7 @@
 ;;
 ;; Meow
 ;;
-;;(setq se/use-meow t)
+(setq se/use-meow t)
 
 ;;
 ;; Corfu
@@ -74,3 +74,8 @@
 ;; treemacs
 ;;
 (setq se/use-treemacs t)
+
+;;
+;; kdl-mode
+;;
+(setq se/use-kdl-mode t)
