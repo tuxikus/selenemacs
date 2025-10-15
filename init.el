@@ -54,6 +54,7 @@
 (require 'init-electric)
 (require 'init-savehist)
 (require 'init-eshell)
+(require 'init-protobuf-mode)
 (require 'init-ediff)
 (require 'init-org-mode)
 (require 'init-org-journal)

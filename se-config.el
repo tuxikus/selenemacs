@@ -79,3 +79,8 @@
 ;; kdl-mode
 ;;
 (setq se/use-kdl-mode t)
+
+;;
+;; protobuf-mode
+;;
+(setq se/use-protobuf-mode t)
