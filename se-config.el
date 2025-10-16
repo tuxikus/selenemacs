@@ -61,6 +61,11 @@
 (setq se/use-go-mode t)
 
 ;;
+;; rust-mode
+;;
+(setq se/use-rust-mode t)
+
+;;
 ;; org-journal
 ;;
 (setq se/use-org-journal t)
@@ -84,3 +89,13 @@
 ;; protobuf-mode
 ;;
 (setq se/use-protobuf-mode t)
+
+;;
+;; dape
+;;
+(setq se/use-dape t)
+
+;;
+;;
+;;
+(setq se/use-ace-window t)

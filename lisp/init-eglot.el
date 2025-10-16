@@ -28,7 +28,8 @@
 (use-package eglot
   :ensure nil
   :hook
-  ((go-mode . eglot-ensure)))
+  ((go-mode . eglot-ensure)
+   (rust-mode . eglot-ensure)))
 
 (provide 'init-eglot)
 ;;; init-eglot.el ends here

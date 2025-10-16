@@ -1,4 +1,4 @@
-;;; init-treemacs.el --- treemacs configuration. -*- lexical-binding: t -*-
+;;; init-rust-mode.el --- rust-mode configuration. -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2025 tuxikus
 
@@ -25,17 +25,15 @@
 ;;
 
 ;;; Code:
-(defcustom se/use-treemacs nil
-  "Option to use the treemacs package."
+(defcustom se/use-rust-mode nil
+  "Option to use the rust-mode package."
   :type 'boolean
   :group 'selenemacs)
 
-(when se/use-treemacs
-  (use-package treemacs
+(when se/use-rust-mode
+  (use-package rust-mode
     :ensure t
-    :defer t
-    :bind
-    (("C-c t t". treemacs))))
+    :hook ((rust-mode . (lambda () (setq indent-tabs-mode nil))))))
 
-(provide 'init-treemacs)
-;;; init-treemacs.el ends here
+(provide 'init-rust-mode)
+;;; init-rust-mode.el ends here

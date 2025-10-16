@@ -1,4 +1,4 @@
-;;; init-treemacs.el --- treemacs configuration. -*- lexical-binding: t -*-
+;;; init-ace-window.el --- ace-window configuration. -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2025 tuxikus
 
@@ -25,17 +25,19 @@
 ;;
 
 ;;; Code:
-(defcustom se/use-treemacs nil
-  "Option to use the treemacs package."
+(defcustom se/use-ace-window nil
+  "Option to use the ace-window package."
   :type 'boolean
   :group 'selenemacs)
 
-(when se/use-treemacs
-  (use-package treemacs
+(when se/use-ace-window
+  (use-package ace-window
     :ensure t
-    :defer t
     :bind
-    (("C-c t t". treemacs))))
+    (("M-o" . ace-window))
+    :init
+    (setq aw-keys '(?a ?s ?d ?f ?g ?h ?j ?k ?l))
+    (setq aw-dispatch-always t)))
 
-(provide 'init-treemacs)
-;;; init-treemacs.el ends here
+(provide 'init-ace-window)
+;;; init-ace-window.el ends here

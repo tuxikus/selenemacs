@@ -1,4 +1,4 @@
-;;; init-treemacs.el --- treemacs configuration. -*- lexical-binding: t -*-
+;;; init-dape.el --- dape configuration. -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2025 tuxikus
 
@@ -25,17 +25,14 @@
 ;;
 
 ;;; Code:
-(defcustom se/use-treemacs nil
-  "Option to use the treemacs package."
+(defcustom se/use-dape nil
+  "Option to use the dape package."
   :type 'boolean
   :group 'selenemacs)
 
-(when se/use-treemacs
-  (use-package treemacs
-    :ensure t
-    :defer t
-    :bind
-    (("C-c t t". treemacs))))
+(when se/use-dape
+  (use-package dape
+    :ensure t))
 
-(provide 'init-treemacs)
-;;; init-treemacs.el ends here
+(provide 'init-dape)
+;;; init-dape.el ends here

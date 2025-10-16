@@ -34,7 +34,7 @@
   (use-package consult
     :ensure t
     :bind
-    ("C-x b" . consult-buffer)))
+    ("C-c b b" . consult-buffer)))
 
 (provide 'init-consult)
 ;;; init-consult.el ends here

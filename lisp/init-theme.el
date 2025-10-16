@@ -30,6 +30,12 @@
   (interactive)
   (load-theme se/theme))
 
+(use-package autothemer
+  :ensure t)
+
+(use-package doom-themes
+  :ensure t)
+
 (add-to-list 'custom-theme-load-path (concat user-emacs-directory "themes"))
 
 (add-hook 'emacs-startup-hook #'se/load-theme)
