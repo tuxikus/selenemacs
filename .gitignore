@@ -11,3 +11,4 @@ recentf
 history
 .cache/
 tree-sitter/
+*.elc
