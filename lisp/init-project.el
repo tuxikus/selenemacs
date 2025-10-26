@@ -1,4 +1,4 @@
-;;; init-files.el --- Config of temp. and backup files. -*- lexical-binding: t -*-
+;;; init-project.el --- project configuration. -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2025 tuxikus
 
@@ -22,19 +22,15 @@
 ;; along with this program.  If not, see https://www.gnu.org/licenses/.
 
 ;;; Commentary:
-;; 
+;;
 
 ;;; Code:
-
-(use-package files
-  :ensure t
+(use-package project
+  :ensure nil
   :bind
-  (("C-c f f" . find-file)
-   ("C-c f s" . save-buffer)
-   ("C-c f S" . save-some-buffers))
-  :init
-  (setq auto-save-default nil)
-  (setq make-backup-files nil))
+  (("C-c p p" . project-switch-project)
+   ("C-c p e" . project-eshell)
+   ("C-c p f" . project-find-file)))
 
-(provide 'init-files)
-;;; init-files.el ends here
+(provide 'init-project)
+;;; init-project.el ends here

@@ -1,4 +1,4 @@
-;;; init-files.el --- Config of temp. and backup files. -*- lexical-binding: t -*-
+;;; init-surround.el --- surround configuration. -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2025 tuxikus
 
@@ -22,19 +22,19 @@
 ;; along with this program.  If not, see https://www.gnu.org/licenses/.
 
 ;;; Commentary:
-;; 
+;;
 
 ;;; Code:
+(defcustom se/use-surround nil
+  "Option to use the surround package."
+  :type 'boolean
+  :group 'selenemacs)
 
-(use-package files
-  :ensure t
-  :bind
-  (("C-c f f" . find-file)
-   ("C-c f s" . save-buffer)
-   ("C-c f S" . save-some-buffers))
-  :init
-  (setq auto-save-default nil)
-  (setq make-backup-files nil))
+(when se/use-surround
+  (use-package surround
+    :ensure t
+    :bind
+    (("C-c s i" . surround-insert))))
 
-(provide 'init-files)
-;;; init-files.el ends here
+(provide 'init-surround)
+;;; init-surround.el ends here

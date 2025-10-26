@@ -28,7 +28,7 @@
 (use-package ibuffer
   :ensure nil
   :bind
-  (("C-c b B")))
+  (("C-c b B" . ibuffer)))
 
 (provide 'init-ibuffer)
 ;;; init-ibuffer.el ends here

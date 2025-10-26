@@ -39,6 +39,16 @@
   (use-package meow
     :ensure t
     :init
+    (defun se/avy-meow-goto-line ()
+      (interactive)
+      (set-mark (point))
+      (avy-goto-line))
+
+    (defun se/avy-meow-till ()
+      (interactive)
+      (set-mark (point))
+      (call-interactively #'avy-goto-char))
+    
     (defun se/setup-meow ()
       (meow-global-mode 1)
       
@@ -91,7 +101,7 @@
 	 '("D" . meow-backward-delete)
 	 '("e" . meow-next-word)
 	 '("E" . meow-next-symbol)
-	 '("f" . meow-find)
+	 '("f" . consult-line)
 	 '("g" . meow-cancel-selection)
 	 '("G" . meow-grab)
 	 '("h" . meow-left)
@@ -114,14 +124,14 @@
 	 '("r" . meow-replace)
 	 '("R" . meow-swap-grab)
 	 '("s" . meow-kill)
-	 '("t" . meow-till)
+	 '("t" . se/avy-meow-till)
 	 '("u" . meow-undo)
 	 '("U" . meow-undo-in-selection)
 	 '("v" . meow-visit)
 	 '("w" . meow-mark-word)
 	 '("W" . meow-mark-symbol)
 	 '("x" . meow-line)
-	 '("X" . meow-goto-line)
+	 '("X" . se/avy-meow-goto-line)
 	 '("y" . meow-save)
 	 '("Y" . meow-sync-grab)
 	 '("z" . meow-pop-selection)

@@ -1,4 +1,4 @@
-;;; init-files.el --- Config of temp. and backup files. -*- lexical-binding: t -*-
+;;; init-bookmark.el --- bookmark configuration -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2025 tuxikus
 
@@ -26,15 +26,11 @@
 
 ;;; Code:
 
-(use-package files
+(use-package bookmark
   :ensure t
   :bind
-  (("C-c f f" . find-file)
-   ("C-c f s" . save-buffer)
-   ("C-c f S" . save-some-buffers))
-  :init
-  (setq auto-save-default nil)
-  (setq make-backup-files nil))
-
-(provide 'init-files)
-;;; init-files.el ends here
+  (("C-c b m o" . bookmark-jump)
+  ("C-c b m s" . bookmark-set)))
+  
+(provide 'init-bookmark)
+;;; init-bookmark.el ends here
