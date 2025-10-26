@@ -30,6 +30,16 @@
   (interactive)
   (load-theme se/theme))
 
+(defcustom se/theme 'modus-vivendi
+  "Theme of SeleneEmacs"
+  :type '(choice
+	  (const modus-operandi)
+	  (const modus-vivendi)
+	  (const doom-rose-pine)
+	  (const doom-rose-pine-dawn)
+	  (const doom-rose-pine-moon))
+  :group 'selenemacs)
+
 (use-package autothemer
   :ensure t)
 

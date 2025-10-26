@@ -12,3 +12,4 @@ history
 .cache/
 tree-sitter/
 *.elc
+#*#

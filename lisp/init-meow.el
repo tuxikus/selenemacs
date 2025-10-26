@@ -130,7 +130,6 @@
   :hook
   (emacs-startup . se/setup-meow)))
 
-
 (provide 'init-meow)
 ;;; init-meow.el ends here
 

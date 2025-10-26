@@ -1,4 +1,4 @@
-;;; init-se-config.el --- User configuration setup. -*- lexical-binding: t -*-
+;;; init-ibuffer.el --- Ibuffer configuration. -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2025 tuxikus
 
@@ -22,25 +22,13 @@
 ;; along with this program.  If not, see https://www.gnu.org/licenses/.
 
 ;;; Commentary:
-;; Things the user can configure.
+;;
 
 ;;; Code:
+(use-package ibuffer
+  :ensure nil
+  :bind
+  (("C-c b B")))
 
-;; Custom group for SelenEmacs
-(defgroup selenemacs nil
-  "Group of the SelenEmacs distribution."
-  :group 'convenience)
-
-;; Load the user configuration.
-;; The local config file is used for development.
-(let ((se-config-default
-       (expand-file-name "se-config.el" user-emacs-directory))
-      (se-config-local
-       (expand-file-name "se-config.el.local" user-emacs-directory)))
-  (if (file-exists-p se-config-local)
-      (load se-config-local)
-    (load se-config-default)))
-
-(provide 'init-se-config)
-;;; init-se-config.el ends here
-
+(provide 'init-ibuffer)
+;;; init-ibuffer.el ends here
