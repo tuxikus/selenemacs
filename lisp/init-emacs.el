@@ -36,6 +36,8 @@
    ("C-c f s" . save-buffer)
    ("C-c f S" . save-some-buffers)
    ("C-c b k" . kill-buffer)
+   ("C-c b m o" . bookmark-jump)
+   ("C-c b m s" . bookmark-set)
    ("C-c b K" . kill-current-buffer))
   :custom
   (tab-always-indent 'complete)

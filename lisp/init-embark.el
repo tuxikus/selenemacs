@@ -1,4 +1,4 @@
-;;; init-corfu.el --- Corfu configuration. -*- lexical-binding: t -*-
+;;; init-embark.el --- Embark configuration. -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2025 tuxikus
 
@@ -25,38 +25,29 @@
 ;;
 
 ;;; Code:
-(defcustom se/use-corfu nil
-  "Option to use the corfu package."
+(defcustom se/use-embark nil
+  "Option to use the embark package."
   :type 'boolean
   :group 'selenemacs)
 
-(when se/use-corfu
-  (use-package corfu
-    :ensure t
-    :init
-    ;; Configure Corfu
-    (setq corfu-auto t
-          corfu-auto-delay 0.2
-          corfu-auto-prefix 2
-          corfu-popupinfo-delay '(0.5 . 0.2)
-          corfu-preview-current 'insert
-          corfu-preselect-first t
-          corfu-quit-at-boundary t
-          corfu-quit-no-match t
-          corfu-scroll-margin 4)
-    
-    ;; Enable Corfu globally
-    (global-corfu-mode)
-    
-    ;; Configure Corfu to work with CAPE
-    (when (boundp 'se/use-cape)
-      (setq corfu-preselect-first nil)))
+(when se/use-embark
+  (use-package embark
+      :ensure t
+      :bind
+      (("C-c ." . embark-act))
+      :init
+      (setq prefix-help-command #'embark-prefix-help-command)
+      (setq embark-quit-after-action nil)
+      :config
+      (add-to-list 'display-buffer-alist
+		   '("\\`\\*Embark Collect \\(Live\\|Completions\\)\\*"
+                     nil
+                     (window-parameters (mode-line-format . none)))))
 
-  (use-package corfu-terminal
+  (use-package embark-consult
     :ensure t
-    :init
-    (unless (display-graphic-p)
-      (corfu-terminal-mode +1))))
+    :hook
+    (embark-collect-mode . consult-preview-at-point-mode)))
 
-(provide 'init-corfu)
-;;; init-corfu.el ends here
+(provide 'init-embark)
+;;; init-embark.el ends here

@@ -6,8 +6,11 @@
 (setq se/font "Iosevka-25")
 
 ;;; Theme
-(setq se/theme 'modus-vivendi)
+;;(setq se/theme 'modus-vivendi)
 ;;(setq se/theme 'modus-operandi)
+;;(setq se/theme 'doom-rose-pine)
+(setq se/theme 'doom-rose-pine-moon)
+;;(setq se/theme 'doom-rose-pine-dawn)
 
 ;;; Packages
 ;;
@@ -96,6 +99,46 @@
 (setq se/use-dape t)
 
 ;;
-;;
+;; Ace window
 ;;
 (setq se/use-ace-window t)
+
+;;
+;; Embark
+;;
+(setq se/use-embark t)
+
+;;
+;; Avy
+;;
+(setq se/use-avy t)
+
+;;
+;; Flycheck
+;;
+(setq se/use-flycheck t)
+
+;;
+;; rg
+;;
+(setq se/use-rg t)
+
+;;
+;; wgrep
+;;
+(setq se/use-wgrep t)
+
+;;
+;; git-gutter
+;;
+(setq se/use-git-gutter t)
+
+;;
+;; tempel
+;;
+(setq se/use-tempel t)
+
+;;
+;; yasnippet
+;;
+(setq se/use-yasnippet t)

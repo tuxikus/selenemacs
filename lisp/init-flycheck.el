@@ -1,4 +1,4 @@
-;;; init-corfu.el --- Corfu configuration. -*- lexical-binding: t -*-
+;;; init-flycheck.el --- flycheck configuration. -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2025 tuxikus
 
@@ -25,38 +25,14 @@
 ;;
 
 ;;; Code:
-(defcustom se/use-corfu nil
-  "Option to use the corfu package."
+(defcustom se/use-flycheck nil
+  "Option to use the flycheck package."
   :type 'boolean
   :group 'selenemacs)
 
-(when se/use-corfu
-  (use-package corfu
-    :ensure t
-    :init
-    ;; Configure Corfu
-    (setq corfu-auto t
-          corfu-auto-delay 0.2
-          corfu-auto-prefix 2
-          corfu-popupinfo-delay '(0.5 . 0.2)
-          corfu-preview-current 'insert
-          corfu-preselect-first t
-          corfu-quit-at-boundary t
-          corfu-quit-no-match t
-          corfu-scroll-margin 4)
-    
-    ;; Enable Corfu globally
-    (global-corfu-mode)
-    
-    ;; Configure Corfu to work with CAPE
-    (when (boundp 'se/use-cape)
-      (setq corfu-preselect-first nil)))
+(when se/use-flycheck
+  (use-package flycheck
+    :ensure t))
 
-  (use-package corfu-terminal
-    :ensure t
-    :init
-    (unless (display-graphic-p)
-      (corfu-terminal-mode +1))))
-
-(provide 'init-corfu)
-;;; init-corfu.el ends here
+(provide 'init-flycheck)
+;;; init-git-gutter.el ends here

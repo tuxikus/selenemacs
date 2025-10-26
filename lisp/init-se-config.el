@@ -35,7 +35,10 @@
   "Theme of SeleneEmacs"
   :type '(choice
 	  (const modus-operandi)
-	  (const modus-vivendi))
+	  (const modus-vivendi)
+	  (const doom-rose-pine)
+	  (const doom-rose-pine-moon)
+	  (const doom-rose-pine-dawn))
   :group 'selenemacs)
 
 ;; Load the user configuration.

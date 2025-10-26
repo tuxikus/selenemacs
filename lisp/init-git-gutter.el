@@ -1,4 +1,4 @@
-;;; init-corfu.el --- Corfu configuration. -*- lexical-binding: t -*-
+;;; init-git-gutter.el --- git-gutter configuration. -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2025 tuxikus
 
@@ -25,38 +25,16 @@
 ;;
 
 ;;; Code:
-(defcustom se/use-corfu nil
-  "Option to use the corfu package."
+(defcustom se/use-git-gutter nil
+  "Option to use the git-gutter package."
   :type 'boolean
   :group 'selenemacs)
 
-(when se/use-corfu
-  (use-package corfu
+(when se/use-git-gutter
+  (use-package git-gutter
     :ensure t
     :init
-    ;; Configure Corfu
-    (setq corfu-auto t
-          corfu-auto-delay 0.2
-          corfu-auto-prefix 2
-          corfu-popupinfo-delay '(0.5 . 0.2)
-          corfu-preview-current 'insert
-          corfu-preselect-first t
-          corfu-quit-at-boundary t
-          corfu-quit-no-match t
-          corfu-scroll-margin 4)
-    
-    ;; Enable Corfu globally
-    (global-corfu-mode)
-    
-    ;; Configure Corfu to work with CAPE
-    (when (boundp 'se/use-cape)
-      (setq corfu-preselect-first nil)))
+    (global-git-gutter-mode +1)))
 
-  (use-package corfu-terminal
-    :ensure t
-    :init
-    (unless (display-graphic-p)
-      (corfu-terminal-mode +1))))
-
-(provide 'init-corfu)
-;;; init-corfu.el ends here
+(provide 'init-git-gutter)
+;;; init-git-gutter.el ends here

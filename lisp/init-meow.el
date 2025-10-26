@@ -43,6 +43,9 @@
       (meow-global-mode 1)
       
       (when se/meow-qwerty
+	(setq meow-expand-hint-remove-delay 2.0)
+	(setq meow-use-clipboard t)
+	
 	(meow-motion-define-key
 	 '("j" . meow-next)
 	 '("k" . meow-prev)
